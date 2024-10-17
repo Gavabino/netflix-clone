@@ -19,7 +19,6 @@ function Nav({ movieList, movieListChange }) {
 
   const handleClick = () => {
     toggleActive(!active);
-    
   };
 
   return (

@@ -6,13 +6,21 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function List({ movielist, movieListChange }) {
-    return (
-        <div className="list-container">
-            {movielist.map((item) => {
-                return <ListItem movie={item} key={item.id} movielist={movielist} movieListChange={movieListChange}/>;
-            })}
-        </div>
-    );
+    if (movielist.length === 0) {
+        return (
+            <div className="list-container">
+                <h1 className="warning">My List is Empty</h1>
+            </div>
+        )
+    } else {
+        return (
+            <div className="list-container">
+                {movielist.map((item) => {
+                    return <ListItem movie={item} key={item.id} movielist={movielist} movieListChange={movieListChange}/>;
+                })}
+            </div>
+        );   
+    }
 }
 
 function ListItem({ movie, movielist, movieListChange }) {

@@ -36,3 +36,11 @@
     z-index: 1;
     color: white;
 }
+
+.warning {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
