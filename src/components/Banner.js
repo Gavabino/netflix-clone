@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "./axios";
 import requests from "./Requests";
 import "./Banner.css";
+import { useSelector, useDispatch } from 'react-redux';
+import { setMovieList } from '/Users/gavinatkinson/Documents/Code/Netflix-Clone/netflix-clone/src/movieListSlice.js';
 
-function Banner({ movieList, movieListChange }) {
+function Banner() {
     const [movie, setMovie] = useState();
+    const movieList = useSelector((state) => state.movieList.movies); // Access movieList state
+    const dispatch = useDispatch();
 
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(requests.fetchNetflixOriginals);
             setMovie(
                 request.data.results[
-                    Math.floor(Math.random() * (request.data.results.length - 1))
+                    Math.floor(
+                        Math.random() * (request.data.results.length - 1)
+                    )
                 ]
             );
             return request;
@@ -24,7 +30,10 @@ function Banner({ movieList, movieListChange }) {
     }
     const handleClick = () => {
         if (!movieList.includes(movie)) {
-            movieListChange([...movieList.filter(item => item !== undefined), movie]);
+            dispatch(setMovieList([
+                ...movieList.filter((item) => item !== undefined),
+                movie,
+            ]));
         } else {
             alert("Movie already in list");
         }
