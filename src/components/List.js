@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./List.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -9,7 +9,6 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 
 function List() {
     const movieList = useSelector((state) => state.movieList.movies); // Access movieList state
-    const dispatch = useDispatch();
 
     if (movieList.length === 0) {
         return (

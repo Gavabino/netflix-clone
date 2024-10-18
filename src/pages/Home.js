@@ -1,11 +1,11 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import "./Home.css";
 import requests from "../components/Requests";
 import Row from "../components/Row";
 import Banner from "../components/Banner";
 import Nav from "../components/Nav";
-import { Provider } from 'react-redux';
-import { store } from '/Users/gavinatkinson/Documents/Code/Netflix-Clone/netflix-clone/src/store.js';
+import { Provider } from "react-redux";
+import { store } from "/Users/gavinatkinson/Documents/Code/Netflix-Clone/netflix-clone/src/store.js";
 
 function Home() {
     return (

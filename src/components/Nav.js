@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
 import List from "./List";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 
 function Nav() {
@@ -30,9 +30,9 @@ function Nav() {
                 src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Netflix_Logomark.png"
                 alt="Netflix Logo"
             />
-            <Link className="my-list-link" to={"MyList"}>
+            {/*<Link className="my-list-link" to={"MyList"}>
                 My List
-            </Link>
+            </Link>*/}
             <button className="my-list" onClick={handleClick}>
                 My List
             </button>

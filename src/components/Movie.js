@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import "./Banner.css";
 import { useSelector, useDispatch } from 'react-redux';
 import { setMovieList } from '/Users/gavinatkinson/Documents/Code/Netflix-Clone/netflix-clone/src/movieListSlice.js';
